@@ -136,3 +136,50 @@ body {
 .pie-pagina p {
     margin: 0;
 }
+/* Celulares */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    justify-content: flex-start;
+  }
+
+  .contenedor {
+    margin-top: 40px;
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  .imagen-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .titulo-universidad {
+    font-size: 14px;
+  }
+
+  .grupo-formulario label {
+    font-size: 13px;
+  }
+
+  .grupo-formulario input {
+    font-size: 14px;
+  }
+
+  .boton-login {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .enlaces-navegacion {
+    gap: 15px;
+  }
+
+  .enlaces-navegacion a {
+    font-size: 13px;
+  }
+
+  .pie-pagina {
+    font-size: 11px;
+  }
+}
