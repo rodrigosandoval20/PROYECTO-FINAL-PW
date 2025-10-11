@@ -95,3 +95,40 @@ footer {
   transition: transform 0.3s ease, filter 0.3s ease;
   transform: translateY(-5px); /* 🔼 Mueve la imagen un poco hacia arriba */
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #3a3a3a;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+ul li:hover {
+  background-color: #4a4a4a;
+  transform: translateY(-3px);
+}
+
+ul li strong {
+  flex: 1;
+  font-size: 16px;
+  color: #fff;
+}
+
+ul li img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-left: 15px;
+  box-shadow: 0 0 8px rgba(250, 13, 13, 0.4);
+  transition: transform 0.3s ease;
+}
