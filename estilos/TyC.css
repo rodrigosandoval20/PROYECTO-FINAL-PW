@@ -87,3 +87,45 @@ footer {
   border-top: 1px solid #444;
 }
 
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 480px) {
+  header.navbar {
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .main-content {
+    padding: 20px 10px;
+    align-items: flex-start;
+  }
+
+  .tyc {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .tyc h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .tyc p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  #btnVolver {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}

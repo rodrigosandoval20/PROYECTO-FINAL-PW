@@ -132,3 +132,34 @@ ul li img {
   box-shadow: 0 0 8px rgba(250, 13, 13, 0.4);
   transition: transform 0.3s ease;
 }
+
+
+/* Responsive para Celulares */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  .nosotros {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .nosotros h2 {
+    font-size: 20px;
+  }
+
+  .nosotros p {
+    font-size: 14px;
+  }
+
+  #btnVolver {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  ul li img {
+    width: 80px;
+    height: 80px;
+  }
+}
