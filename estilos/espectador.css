@@ -1,0 +1,77 @@
+/* ====== GENERAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 15px 40px;
+  color: white;
+}
+
+.navbar-brand h1 {
+  font-size: 1.6rem;
+  color: #667eea;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ====== BOTONES ====== */
+.perfil-button,
+.logout-button {
+  border: 1px solid #ff6600;
+  color: #ff6600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.perfil-button:hover,
+.logout-button:hover {
+  background-color: #ff6600;
+  color: #111;
+}
+
+/* ====== MONEDAS ====== */
+.monedas {
+  font-size: 14px;
+  background-color: #222;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+.container-general {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.container-general h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.container-general p {
+  font-size: 18px;
+  color: #eee;
+}
