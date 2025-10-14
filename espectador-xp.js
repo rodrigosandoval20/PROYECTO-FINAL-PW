@@ -1,41 +1,24 @@
-// ==== CONFIGURACIÓN INICIAL ====
-let xpActual = 0;
-let xpMax = 100;
+let xp = 0;
 let nivel = 1;
-let monedas = 0;
+const xpMax = 100;
 
-// ==== OBTENER ELEMENTOS DEL HTML ====
-const xpBar = document.getElementById("xp-bar");
-const xpText = document.getElementById("xp-text");
-const nivelText = document.getElementById("nivel");
-const monedasText = document.getElementById("monedas");
+// Obtener los elementos
+const xpBar = document.getElementById("xp-bar-grande");
+const xpText = document.getElementById("xp-text-grande");
+const nivelGrande = document.getElementById("nivel-grande");
 
-// ==== FUNCIÓN PARA ACTUALIZAR LA INTERFAZ ====
-function actualizarInterfaz() {
-  xpText.textContent = `XP: ${xpActual} / ${xpMax}`;
-  nivelText.textContent = nivel;
-  monedasText.textContent = monedas;
+// Aumentar XP automáticamente cada segundo
+function actualizarXP() {
+  xp++;
 
-  const porcentaje = (xpActual / xpMax) * 100;
-  xpBar.style.width = `${porcentaje}%`;
-}
-
-// ==== FUNCIÓN PARA GANAR XP ====
-function ganarXP() {
-  xpActual += 1;
-
-  // Si llega o supera el máximo, sube de nivel
-  if (xpActual >= xpMax) {
-    xpActual = 0;
+  if (xp >= xpMax) {
+    xp = 0;
     nivel++;
-    monedas += 50; // puedes ajustar o quitar esta recompensa
+    nivelGrande.textContent = nivel; // actualiza número de nivel
   }
 
-  actualizarInterfaz();
+  xpBar.style.width = `${(xp / xpMax) * 100}%`;
+  xpText.textContent = `XP: ${xp} / ${xpMax}`;
 }
 
-// ==== INICIO AUTOMÁTICO ====
-actualizarInterfaz();
-
-// Cada 1 segundo gana 1 XP
-setInterval(ganarXP, 1000);
+setInterval(actualizarXP, 1000);
