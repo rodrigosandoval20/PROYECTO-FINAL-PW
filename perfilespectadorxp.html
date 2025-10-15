@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - StreamBoost</title>
+  <link rel="stylesheet" href="estilos/perfilespectador.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-brand">
+      <h1>StreamBoost</h1>
+    </div>
+
+    <div class="navbar-right">
+      <span class="monedas">Monedas: <span id="monedas">0</span></span>
+      <a href="perfil-espectador.html" class="perfil-button">Atras</a>
+      <button class="logout-button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card perfil">
+      <h2>Perfil del Espectador</h2>
+      <p>Hola, <span id="nombre-usuario">Usuario</span></p>
+
+      <div class="xp-section">
+        <h3>Nivel <span id="nivel-grande">1</span></h3>
+        <div class="xp-bar-container grande">
+          <div class="xp-bar" id="xp-bar-grande"></div>
+        </div>
+        <p id="xp-text-grande">XP: 0 / 100</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de notificaciones -->
+  <div id="notification-modal" class="notification-modal">
+    <div class="notification-content">
+      <div class="notification-icon">🎉</div>
+      <div class="notification-title">¡Subiste de nivel!</div>
+      <div class="notification-message">¡Felicidades! Has alcanzado el nivel <span id="notification-level">2</span></div>
+      <button class="notification-close" onclick="closeNotification()">¡Genial!</button>
+    </div>
+  </div>
+
+  <script src="espectador-xp.js"></script>
+</body>
+</html>
