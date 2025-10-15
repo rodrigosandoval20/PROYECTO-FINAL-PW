@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #2c2c2c;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+}
+
+.marca-universidad {
+    margin-bottom: 40px;
+}
+
+.imagen-logo {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+.titulo-universidad {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.grupo-formulario label {
+    color: white;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.grupo-formulario input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    padding: 8px 0;
+    font-size: 16px;
+    outline: none;
+}
+
+.grupo-formulario input:focus {
+    border-bottom-color: #fa0d0dd8;
+}
+
+.grupo-formulario input::placeholder {
+    color: #ccc;
+}
+
+.boton-login {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boton-login:hover {
+    background: white;
+    color: #2c2c2c;
+}
+
+.registrarse {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+.registrarse:hover {
+    color: #fd1919bb;
+}
+
+.navegacion-principal {
+    margin-bottom: 30px;
+}
+
+.enlaces-navegacion {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.enlaces-navegacion a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.enlaces-navegacion a:hover {
+    color: #fd1919bb;
+}
+
+.pie-pagina {
+    color: #888;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.pie-pagina p {
+    margin: 0;
+}
+/* Celulares */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    justify-content: flex-start;
+  }
+
+  .contenedor {
+    margin-top: 40px;
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  .imagen-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .titulo-universidad {
+    font-size: 14px;
+  }
+
+  .grupo-formulario label {
+    font-size: 13px;
+  }
+
+  .grupo-formulario input {
+    font-size: 14px;
+  }
+
+  .boton-login {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .enlaces-navegacion {
+    gap: 15px;
+  }
+
+  .enlaces-navegacion a {
+    font-size: 13px;
+  }
+
+  .pie-pagina {
+    font-size: 11px;
+  }
+}
