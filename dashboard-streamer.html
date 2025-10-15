@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Streamer - StreamBoost</title>
+  <link rel="stylesheet" href="estilos/streamer.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-brand">
+      <h1>StreamBoost</h1>
+    </div>
+    <div class="navbar-actions">
+      <a href="index.html" class="btn btn-outline">Cerrar sesión</a>
+    </div>
+  </header>
+
+  <main class="container" id="ds-streamer">
+    <div class="card">
+      <h2>Dashboard del Streamer</h2>
+      
+      <!-- Estado RTMP -->
+      <div class="metric">
+        <span id="rtmp-status" class="rtmp-disconnected">RTMP: desconectado</span>
+      </div>
+      
+      <!-- Botones de control -->
+      <div class="control-buttons">
+        <button id="btnStart" class="btn btn-primary" onclick="startTransmission()">Iniciar transmisión</button>
+        <button id="btnStop" class="btn btn-danger" onclick="stopTransmission()" disabled>Finalizar transmisión</button>
+      </div>
+      
+      <!-- Métricas -->
+      <div class="metric">Horas transmitidas: <span id="horas-transmitidas">0</span> h</div>
+      
+      <!-- Progreso hacia siguiente nivel -->
+      <div class="progress-container">
+        <div class="progress-label">Progreso hacia siguiente nivel:</div>
+        <div class="progress">
+          <div id="hoursProgress" class="progress-bar"></div>
+        </div>
+        <div id="hoursToNext" class="progress-text">Faltan 5.0 h para el nivel 2</div>
+      </div>
+      
+      <p class="text-secondary">Última actualización: ahora</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
