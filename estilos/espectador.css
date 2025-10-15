@@ -64,10 +64,7 @@ body {
 .container-general {
   text-align: center;
   margin-top: 150px;
-<<<<<<< HEAD
-=======
   padding: 0 2rem;
->>>>>>> Arozena
 }
 
 .container-general h2 {
@@ -79,8 +76,6 @@ body {
   font-size: 18px;
   color: #eee;
 }
-<<<<<<< HEAD
-=======
 
 /* ====== SECCIONES DEL ESPECTADOR ====== */
 .welcome-section {
@@ -492,4 +487,3 @@ body {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
->>>>>>> Arozena
