@@ -15,7 +15,7 @@
     <div class="navbar-right">
       <span class="monedas">Monedas: <span id="monedas">0</span></span>
       <a href="perfilespectadorxp.html" class="perfil-button">Perfil</a>
-      <button class="logout-button">Cerrar sesión</button>
+      <button class="logout-button" onclick="cerrarSesion()">Cerrar sesión</button>
     </div>
   </header>
 
@@ -23,14 +23,53 @@
     <div class="welcome-section">
       <h2 id="saludo-usuario">Hola, espectador</h2>
       <p class="user-role">Rol: <span id="rol-usuario">espectador</span></p>
+      
+      <!-- Información de nivel del usuario -->
+      <div class="user-level-info">
+        <div class="level-badge">
+          <span class="level-text">Nivel</span>
+          <span id="user-level" class="level-number">1</span>
+        </div>
+        <div class="points-info">
+          <span id="user-points">0</span> puntos
+        </div>
+      </div>
     </div>
     
-    <div class="content-section">
-      <h3>Bienvenido a StreamBoost</h3>
-      <p>Explora tus transmisiones favoritas y gana XP viendo contenido.</p>
-      <p>Recibirás notificaciones cuando los streamers suban de nivel.</p>
+    <div class="search-section">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar streamers..." class="search-input">
+        <button class="search-button">🔍</button>
+      </div>
+      <button class="view-streams-btn">📺 Ver Streams</button>
+    </div>
+
+    <!-- Sección de Tienda de Regalos (enlace) -->
+    <div class="gifts-section">
+      <a href="tienda-regalos.html" class="gifts-link">
+        <h3>🎁 Tienda de Regalos</h3>
+      </a>
+      <p class="text-secondary">Explora y compra regalos para tus streamers favoritos.</p>
+    </div>
+
+    <!-- Sección de Regalos Comprados -->
+    <div class="purchased-gifts-section">
+      <h3>Mis Regalos Comprados</h3>
+      <div id="purchased-gifts-list" class="gifts-grid">
+        <!-- Los regalos comprados se renderizarán aquí -->
+      </div>
     </div>
   </main>
+  
+  <!-- Modal de notificación personalizado -->
+  <div id="notification-modal" class="notification-modal">
+    <div class="notification-content">
+      <div class="notification-icon">✅</div>
+      <h3 id="notification-title">¡Regalo Comprado!</h3>
+      <p id="notification-message">Has comprado un regalo exitosamente</p>
+      <button id="notification-close" class="notification-close">OK</button>
+    </div>
+  </div>
   
   <script src="script.js"></script>
 </body>
