@@ -8,6 +8,10 @@ const INITIAL_STATE = {
     horasTx: 0,
     regalosComprados: [] // Array de IDs de regalos comprados
   },
+  streamer: {
+    regalosRecibidos: [], // Array de objetos {giftId, sender, timestamp, points}
+    totalPuntosRecibidos: 0
+  },
   niveles: { 
     horasRequeridas: [0,5,15,35,60,100], 
     puntosRequeridos: [0,50,120,250,500] 
@@ -34,6 +38,9 @@ function getState() {
     }
     if (!parsedState.regalos) {
       parsedState.regalos = INITIAL_STATE.regalos;
+    }
+    if (!parsedState.streamer) {
+      parsedState.streamer = INITIAL_STATE.streamer;
     }
     setState(parsedState);
     return parsedState;
@@ -236,6 +243,50 @@ function renderStreamer() {
   
   // Actualizar estado RTMP
   setRTMPStatus(!!state.txSession);
+  
+  // Actualizar sección de regalos recibidos
+  renderGiftsReceived();
+}
+
+function renderGiftsReceived() {
+  const state = getState();
+  const totalGiftsElement = document.getElementById('total-gifts');
+  const totalPointsElement = document.getElementById('total-points');
+  const giftsListElement = document.getElementById('gifts-received-list');
+  
+  // Solo renderizar si estamos en el dashboard del streamer
+  if (!totalGiftsElement || !totalPointsElement || !giftsListElement) return;
+  
+  const regalosRecibidos = state.streamer.regalosRecibidos || [];
+  const totalPuntos = state.streamer.totalPuntosRecibidos || 0;
+  
+  // Actualizar contadores
+  totalGiftsElement.textContent = regalosRecibidos.length;
+  totalPointsElement.textContent = totalPuntos;
+  
+  // Renderizar lista de regalos
+  if (regalosRecibidos.length === 0) {
+    giftsListElement.innerHTML = '<p class="no-gifts">Aún no has recibido regalos de tus espectadores</p>';
+  } else {
+    // Mostrar los últimos 10 regalos recibidos
+    const ultimosRegalos = regalosRecibidos.slice(-10).reverse();
+    giftsListElement.innerHTML = ultimosRegalos.map(regalo => {
+      const gift = state.regalos.find(g => g.id === regalo.giftId);
+      const fecha = new Date(regalo.timestamp).toLocaleString();
+      
+      return `
+        <div class="gift-item">
+          <div class="gift-icon">${gift ? gift.icono : '🎁'}</div>
+          <div class="gift-info">
+            <div class="gift-name">${gift ? gift.nombre : 'Regalo'}</div>
+            <div class="gift-sender">Enviado por: ${regalo.sender}</div>
+            <div class="gift-time">${fecha}</div>
+          </div>
+          <div class="gift-points">+${regalo.points} pts</div>
+        </div>
+      `;
+    }).join('');
+  }
 }
 
 function renderEspectador() {
@@ -281,7 +332,9 @@ function renderEspectador() {
 function renderGiftsList() {
   const state = getState();
   const giftsListElement = document.getElementById('gifts-list');
-  if (!giftsListElement) return;
+  
+  // Solo renderizar si estamos en la tienda de regalos
+  if (!giftsListElement || !document.getElementById('monedas')) return;
   
   giftsListElement.innerHTML = '';
   
@@ -392,8 +445,20 @@ function buyGift(regalo) {
       state.user.regalosComprados.push(regalo.id);
     }
     
+    // Registrar regalo recibido por el streamer
+    const regaloRecibido = {
+      giftId: regalo.id,
+      sender: state.user.nombre,
+      timestamp: Date.now(),
+      points: regalo.puntos
+    };
+    
+    state.streamer.regalosRecibidos.push(regaloRecibido);
+    state.streamer.totalPuntosRecibidos += regalo.puntos;
+    
     console.log('Estado después de compra:', state);
     console.log('Regalos comprados después:', state.user.regalosComprados);
+    console.log('Regalos recibidos por streamer:', state.streamer.regalosRecibidos);
     
     // Guardar estado
     setState(state);
@@ -407,10 +472,10 @@ function buyGift(regalo) {
       const puntosElement = document.getElementById('user-points');
       if (monedasElement) monedasElement.textContent = state.user.monedas;
       if (puntosElement) puntosElement.textContent = state.user.puntos;
-    } else {
-      // Estamos en el perfil del espectador
-      renderEspectador();
     }
+    
+    // Actualizar dashboard del streamer si está abierto
+    renderGiftsReceived();
     
     showNotification('¡Regalo Comprado!', `Has enviado ${regalo.icono} ${regalo.nombre} por ${regalo.costo} monedas y ganaste ${regalo.puntos} puntos.`);
   } else {
@@ -453,6 +518,26 @@ function showNotification(title, message) {
       }
     };
     document.addEventListener('keydown', handleEscape);
+  }
+}
+
+function addSampleGifts() {
+  const state = getState();
+  
+  // Solo agregar regalos de ejemplo si no hay ninguno
+  if (state.streamer.regalosRecibidos.length === 0) {
+    const sampleGifts = [
+      { giftId: 1, sender: "Alex_Gamer", timestamp: Date.now() - 7200000, points: 5 },
+      { giftId: 3, sender: "Maria_Stream", timestamp: Date.now() - 5400000, points: 25 },
+      { giftId: 2, sender: "Carlos_Pro", timestamp: Date.now() - 3600000, points: 12 },
+      { giftId: 5, sender: "Ana_Fan", timestamp: Date.now() - 1800000, points: 100 },
+      { giftId: 4, sender: "Luis_Viewer", timestamp: Date.now() - 900000, points: 50 }
+    ];
+    
+    state.streamer.regalosRecibidos = sampleGifts;
+    state.streamer.totalPuntosRecibidos = sampleGifts.reduce((total, gift) => total + gift.points, 0);
+    
+    setState(state);
   }
 }
 
@@ -662,6 +747,9 @@ document.addEventListener('DOMContentLoaded', function() {
   renderEspectador();
   renderTiendaRegalos();
   setupSpectatorNotifications();
+  
+  // Agregar algunos regalos de ejemplo para demostración
+  addSampleGifts();
   setupSearchFunctionality();
   
   const loginForm = document.getElementById('loginForm');
