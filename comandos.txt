@@ -8,5 +8,4 @@ npm run dev
 
 npm install react-router-dom (para navegar entre paginas)
 
-
-Mi primer Commit    
+ 
