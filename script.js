@@ -112,6 +112,7 @@ function settleElapsedHours() {
   return state;
 }
 
+
 function startTransmission() {
   const state = getState();
   
