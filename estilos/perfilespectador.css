@@ -1,3 +1,7 @@
+
+/* ====== GENERAL ====== */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +14,9 @@ body {
   min-height: 100vh;
   color: #fff;
 }
+
+
+/* ====== NAVBAR ====== */
 
 .navbar {
   display: flex;
@@ -31,6 +38,9 @@ body {
   gap: 20px;
 }
 
+
+/* ====== BOTONES ====== */
+
 .perfil-button,
 .logout-button {
   border: 1px solid #ff6600;
@@ -49,12 +59,18 @@ body {
   color: #111;
 }
 
+
+/* ====== MONEDAS ====== */
+
 .monedas {
   font-size: 14px;
   background-color: #222;
   padding: 6px 10px;
   border-radius: 10px;
 }
+
+
+/* ====== PERFIL ====== */
 
 .container {
   display: flex;
@@ -105,6 +121,9 @@ body {
   margin-top: 8px;
   color: #fff;
 }
+
+
+/* ====== ANIMACIÓN ====== */
 
 .notification-modal {
   position: fixed;
@@ -177,10 +196,13 @@ body {
   background: linear-gradient(135deg, #f368e0, #ff9ff3);
 }
 
+
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
+
 
 @keyframes fadeInModal {
   from { opacity: 0; }
@@ -252,3 +274,4 @@ body {
     font-size: 1rem;
   }
 }
+

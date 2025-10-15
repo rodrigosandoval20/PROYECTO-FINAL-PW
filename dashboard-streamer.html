@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Streamer - StreamBoost</title>
+
+  <link rel="stylesheet" href="estilos/styles.css">
+
   <link rel="stylesheet" href="estilos/streamer.css">
+
 </head>
 
 <body>
@@ -20,7 +24,9 @@
   <main class="container" id="ds-streamer">
     <div class="card">
       <h2>Dashboard del Streamer</h2>
-      
+
+      <div class="metric">Horas transmitidas: <span id="horas-transmitidas">0</span> h</div>
+
       <!-- Estado RTMP -->
       <div class="metric">
         <span id="rtmp-status" class="rtmp-disconnected">RTMP: desconectado</span>
@@ -63,10 +69,15 @@
         </div>
       </div>
       
+
       <p class="text-secondary">Última actualización: ahora</p>
     </div>
   </main>
 
   <script src="script.js"></script>
 </body>
+
 </html>
+
+</html>
+

@@ -64,7 +64,6 @@ body {
 .container-general {
   text-align: center;
   margin-top: 150px;
-  padding: 0 2rem;
 }
 
 .container-general h2 {
@@ -76,6 +75,54 @@ body {
   font-size: 18px;
   color: #eee;
 }
+
+
+
+.comprar-monedas {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.comprar-monedas h3 {
+  color: #005eff;
+  margin-bottom: 1rem;
+}
+
+.packs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pack {
+  background-color: white;
+  border: 2px solid #005eff;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 150px;
+  transition: transform 0.2s ease;
+}
+
+.pack:hover {
+  transform: scale(1.05);
+}
+
+.btn-comprar {
+  background-color: #005eff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #0043b5;
 
 /* ====== SECCIONES DEL ESPECTADOR ====== */
 .welcome-section {
@@ -486,4 +533,7 @@ body {
 .notification-close:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
+
+}
+
 }
