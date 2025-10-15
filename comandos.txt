@@ -1,0 +1,12 @@
+node --version
+npm --version
+npm create vite@latest (nombre de la aplicacion)
+
+para inicializar el proyecto
+npm install
+npm run dev
+
+npm install react-router-dom (para navegar entre paginas)
+
+
+Mi primer Commit    
