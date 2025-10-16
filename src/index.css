@@ -1,0 +1,120 @@
+/* Base styles from principal.css */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+/* --- Custom styles to match the provided login mockup --- */
+.login-page {
+  width: 100%;
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+.login-card {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: min(720px, 90vw);
+  margin-inline: auto;
+}
+
+.login-logo { margin-block: 16px; }
+.login-title {
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.login-form {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.login-label { font-size: 14px; color: #bfc6cf; }
+.login-input {
+  background: transparent;
+  color: inherit;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  padding: 10px 4px;
+}
+.login-input:focus { outline: none; border-bottom-color: #8ab4ff; }
+
+.login-error { color: #ff8080; font-size: 0.9rem; }
+
+.login-button {
+  align-self: center;
+  margin-top: 14px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.login-register {
+  color: #bfc6cf;
+  margin-top: 8px;
+}
+
+.login-footer {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+.login-footer nav { display: flex; gap: 24px; }
+.login-footer a { color: #bfc6cf; }
+.login-footer small { color: #9aa3ad; }
+
+/* Shared shells */
+.shell { width: min(900px, 92vw); margin: 48px auto; }
+.team-grid { list-style: none; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.team-card { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid #444; border-radius: 8px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,#8a2be2,#3bb8ff); opacity: .7; }
+.muted { color: #b3b9c4; }
+.terms-list { line-height: 1.9; }
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
