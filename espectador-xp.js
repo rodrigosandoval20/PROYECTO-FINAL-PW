@@ -1,3 +1,28 @@
+// =========================
+// 🚫 Protección de páginas sin sesión
+// =========================
+(function verificarSesion() {
+  const estado = localStorage.getItem('appState');
+  if (!estado) {
+    // Si no hay sesión guardada, redirige al login
+    window.location.href = 'index.html';
+    return;
+  }
+
+  try {
+    const datos = JSON.parse(estado);
+    if (!datos.user || !datos.user.nombre || !datos.user.rol) {
+      // Si los datos son inválidos o incompletos, limpiar y redirigir
+      localStorage.removeItem('appState');
+      window.location.href = 'index.html';
+    }
+  } catch (error) {
+    // Si el JSON está dañado
+    localStorage.removeItem('appState');
+    window.location.href = 'index.html';
+  }
+})();
+
 // ===================== VARIABLES GLOBALES =====================
 let xp = 0;
 let nivel = 1;
