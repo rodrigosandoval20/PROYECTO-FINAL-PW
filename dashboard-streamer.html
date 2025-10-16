@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Streamer - StreamBoost</title>
-
-  <link rel="stylesheet" href="estilos/styles.css">
-
   <link rel="stylesheet" href="estilos/streamer.css">
-
 </head>
 
 <body>
@@ -24,9 +20,7 @@
   <main class="container" id="ds-streamer">
     <div class="card">
       <h2>Dashboard del Streamer</h2>
-
-      <div class="metric">Horas transmitidas: <span id="horas-transmitidas">0</span> h</div>
-
+      
       <!-- Estado RTMP -->
       <div class="metric">
         <span id="rtmp-status" class="rtmp-disconnected">RTMP: desconectado</span>
@@ -50,45 +44,10 @@
         <div id="hoursToNext" class="progress-text">Faltan 5.0 h para el nivel 2</div>
       </div>
       
-      <!-- Sección de regalos recibidos -->
-      <div class="gifts-section">
-        <h3>🎁 Regalos Recibidos</h3>
-        <p class="gifts-description">Regalos enviados por tus espectadores durante las transmisiones</p>
-        <div class="gifts-stats">
-          <div class="gift-stat">
-            <span class="gift-count" id="total-gifts">0</span>
-            <span class="gift-label">Total de regalos</span>
-          </div>
-          <div class="gift-stat">
-            <span class="gift-count" id="total-points">0</span>
-            <span class="gift-label">Puntos recibidos</span>
-          </div>
-        </div>
-        <div class="gifts-list" id="gifts-received-list">
-          <p class="no-gifts">Aún no has recibido regalos de tus espectadores</p>
-        </div>
-      </div>
-      
-
       <p class="text-secondary">Última actualización: ahora</p>
     </div>
   </main>
-  <!-- Notificación emergente -->
-<div id="notification"></div>
-
-<!-- Modal de nivel -->
-<div id="notification-modal">
-  <div class="notification-content">
-    <h2 id="notification-title"></h2>
-    <p id="notification-message"></p>
-    <button id="notification-close">Cerrar</button>
-  </div>
-</div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
-</html>
-
