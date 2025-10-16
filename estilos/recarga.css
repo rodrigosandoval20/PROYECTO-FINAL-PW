@@ -65,7 +65,12 @@ body {
 }
 
 .btn-volver {
-  color: white;
+  border: 1px solid #ff6600;
+  color: #ff6600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-decoration: none;
-  font-weight: bold;
 }
