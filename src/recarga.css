@@ -1,12 +1,14 @@
-body {
+/* Scoped legacy recharge styles under .recarga-page to avoid global conflicts */
+.recarga-page {
   font-family: Arial, sans-serif;
   background-color: #0a0a0a;
   color: #fff;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
-.navbar {
+.recarga-page .navbar {
   background-color: #1f1f1f;
   padding: 15px;
   display: flex;
@@ -14,7 +16,7 @@ body {
   align-items: center;
 }
 
-.container {
+.recarga-page .container {
   max-width: 500px;
   margin: 40px auto;
   background-color: #1a1a1a;
@@ -23,21 +25,21 @@ body {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
-.form-recarga label,
-.form-recarga select {
+.recarga-page .form-recarga label,
+.recarga-page .form-recarga select {
   display: block;
   margin-bottom: 10px;
 }
 
-.form-recarga select {
+.recarga-page .form-recarga select {
   width: 100%;
   padding: 8px;
   border-radius: 5px;
   border: none;
 }
 
-.btn-recargar,
-.btn-descargar {
+.recarga-page .btn-recargar,
+.recarga-page .btn-descargar {
   background-color: #e63946;
   color: white;
   border: none;
@@ -48,15 +50,13 @@ body {
   margin-top: 15px;
 }
 
-.btn-recargar:hover {
+.recarga-page .btn-recargar:hover {
   background-color: #ff4757;
 }
 
-.oculto {
-  display: none;
-}
+.recarga-page .oculto { display: none; }
 
-.comprobante {
+.recarga-page .comprobante {
   margin-top: 25px;
   background-color: #222;
   padding: 20px;
@@ -64,7 +64,7 @@ body {
   text-align: center;
 }
 
-.btn-volver {
+.recarga-page .btn-volver {
   border: 1px solid #ff6600;
   color: #ff6600;
   padding: 6px 12px;
