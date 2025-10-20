@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../../../PROYECTO-FINAL-PW/estilos/registro.css";
+import "../registro.css";
 
 const initialForm = {
   nombre: "",
